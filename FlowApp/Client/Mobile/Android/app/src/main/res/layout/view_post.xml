@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="3dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="15sp"
+                    android:paddingBottom="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_post_user"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_profile_default"
+                        app:civ_border_color="@color/colorPrimary"
+                        app:civ_border_width="2dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="7dp"
+                        android:gravity="left|center"
+                        android:orientation="vertical"
+                        tools:ignore="RtlHardcoded">
+
+                        <TextView
+                            android:id="@+id/txt_view_post_username"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="14sp"
+                            app:fontFamily="sans-serif"
+                            tools:text="name" />
+
+                        <TextView
+                            android:id="@+id/txt_view_post_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:textColor="#B1B1B1"
+                            android:textSize="12sp"
+                            app:fontFamily="sans-serif"
+                            tools:text="12 Haziran Perşembe" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_post_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_view_post_context"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:paddingStart="21sp"
+                        android:paddingTop="10sp"
+                        android:paddingEnd="20sp"
+                        android:paddingBottom="17sp"
+                        android:textColor="@android:color/black"
+                        tools:text="......" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_post_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/img_view_post_pic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/TODO"
+                        android:scaleType="centerCrop" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    android:background="#69E1E1E1"
+                    tools:ignore="SmallSp" />
+
+                <LinearLayout
+                    android:id="@+id/layout_post_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center"
+                    android:orientation="horizontal"
+                    android:padding="15sp"
+                    tools:ignore="RtlHardcoded">
+
+                    <RatingBar
+                        android:id="@+id/rating_view_post_bar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:focusableInTouchMode="false"
+                        android:indeterminateTint="#FFEB3B"
+                        android:progress="5"
+                        android:progressBackgroundTint="#D5D5D5"
+                        android:progressTint="#FFEB3B"
+                        android:rating="3.1"
+                        android:secondaryProgressTint="#FFEB3B"
+                        android:stepSize="0.1" />
+
+                    <TextView
+                        android:id="@+id/txt_view_post_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:textColor="#A5A5A5"
+                        android:textSize="12sp"
+                        tools:text="4.3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="3dp"
+                        android:text="@string/post_page_rating"
+                        android:textColor="#A5A5A5"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    android:background="#9AE1E1E1"
+                    android:visibility="gone"
+                    tools:ignore="SmallSp" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

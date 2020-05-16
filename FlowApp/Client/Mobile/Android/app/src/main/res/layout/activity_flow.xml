@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="app.flow.ui.viewmodel.FlowViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/galada"
+                                android:paddingStart="10dp"
+                                android:text="@string/flow_page_title"
+                                android:textColor="?colorPrimary"
+                                android:textSize="35sp"
+                                tools:ignore="RtlSymmetry" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end|center"
+                            android:orientation="horizontal">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_marginEnd="20sp"
+                                android:onClick="@{()->viewModel.onProfileClick()}"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_profile_default"
+                                app:civ_border_width="0dp"
+                                app:image="@{viewModel.profileModel.img}" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.appcompat.widget.Toolbar>
+
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:onRefreshListener="@{() -> viewModel.onRefresh()}"
+                    app:refresh="@{viewModel.isRefresh}">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView_flow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="true"
+                        android:background="#F6F6F6"
+                        app:adapter="@{viewModel.adapter}"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:spanCount="4"
+                        tools:listitem="@layout/view_post" />
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="25dp"
+                android:onClick="@{()->viewModel.onPostPublishClick()}"
+                android:src="@drawable/ic_plus"
+                android:tint="@android:color/white"
+                app:backgroundTint="?colorPrimary"
+                app:fabSize="normal" />
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/include_loading"
+            layout="@layout/include_loading"
+            app:isVisible="@{viewModel.isLoading()}"
+            tools:visibility="gone" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="app.flow.ui.viewmodel.auth.LoginViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="false"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="375dp"
+                    android:background="@drawable/ic_background"
+                    android:contentDescription="@string/TODO"
+                    android:src="@drawable/shape_auth_gradient" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="30dp"
+                    android:fitsSystemWindows="true">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:fontFamily="@font/galada"
+                        android:text="@string/app_title"
+                        android:textAlignment="textStart"
+                        android:textColor="#fff"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginBottom="45dp"
+                        android:text="@string/auth_login_title"
+                        android:textAlignment="textStart"
+                        android:textColor="#FFFFFF"
+                        android:textSize="35sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="3dp"
+                        android:text="@string/auth_login_email"
+                        android:textColor="#FFFFFF"
+                        tools:ignore="RtlSymmetry" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/white"
+                        android:inputType="textEmailAddress"
+                        android:text="@={viewModel.user.email}"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="#FFFFFF" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:paddingStart="3dp"
+                        android:text="@string/auth_login_password"
+                        android:textColor="#FFFFFF"
+                        tools:ignore="RtlSymmetry" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="40dp"
+                        android:backgroundTint="@android:color/white"
+                        android:inputType="textPassword"
+                        android:text="@={viewModel.user.password}"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="#B5B5B5" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/shape_button_white"
+                        android:backgroundTint="@android:color/white"
+                        android:elevation="0dp"
+                        android:onClick="@{()->viewModel.onLoginClick()}"
+                        android:padding="15dp"
+                        android:shadowColor="#fff"
+                        android:text="@string/auth_login_now"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/black"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="55dp"
+                        android:onClick="@{()->viewModel.onRegisterClick()}"
+                        android:text="@string/auth_login_register"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+                <include
+                    android:id="@+id/include_loading"
+                    layout="@layout/include_loading"
+                    app:isVisible="@{viewModel.isLoading()}"
+                    tools:visibility="gone" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

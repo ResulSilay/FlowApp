@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="app.flow.ui.viewmodel.auth.RegisterViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="375dp"
+            android:background="@drawable/ic_background"
+            android:contentDescription="@string/TODO"
+            android:src="@drawable/shape_auth_gradient" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="true"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:fontFamily="@font/galada"
+                            android:text="@string/app_title"
+                            android:textAlignment="textStart"
+                            android:textColor="@android:color/white"
+                            android:textSize="40sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:text="@string/auth_register_title"
+                            android:textAlignment="textStart"
+                            android:textColor="@android:color/white"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="@string/auth_register_name"
+                            android:textColor="@android:color/white"
+                            tools:ignore="RtlSymmetry" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="25dp"
+                            android:backgroundTint="@android:color/white"
+                            android:inputType="textPersonName"
+                            android:text="@={viewModel.registerModel.name}"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="#B5B5B5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="@string/auth_register_email"
+                            android:textColor="@android:color/white"
+                            tools:ignore="RtlSymmetry" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@android:color/white"
+                            android:inputType="textEmailAddress"
+                            android:text="@={viewModel.registerModel.email}"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="#B5B5B5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:paddingStart="3dp"
+                            android:text="@string/auth_register_password"
+                            android:textColor="@android:color/white"
+                            tools:ignore="RtlSymmetry" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="25dp"
+                            android:backgroundTint="@android:color/white"
+                            android:inputType="textPassword"
+                            android:text="@={viewModel.registerModel.password}"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="#B5B5B5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="@string/auth_register_phone"
+                            android:textColor="@android:color/white"
+                            tools:ignore="RtlSymmetry" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="25dp"
+                            android:backgroundTint="@android:color/white"
+                            android:inputType="phone"
+                            android:text="@={viewModel.registerModel.phone}"
+                            android:textColor="@android:color/white" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="@string/auth_register_address"
+                            android:textColor="@android:color/white"
+                            tools:ignore="RtlSymmetry" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="25dp"
+                            android:backgroundTint="@android:color/white"
+                            android:inputType="textPostalAddress"
+                            android:text="@={viewModel.registerModel.address}"
+                            android:textColor="@android:color/white" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:background="@drawable/shape_button_white"
+                            android:backgroundTint="@android:color/white"
+                            android:elevation="0dp"
+                            android:onClick="@{()->viewModel.onRegisterClick()}"
+                            android:padding="15dp"
+                            android:shadowColor="#fff"
+                            android:text="@string/auth_register_now"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/black"
+                            android:textSize="17sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/include_loading"
+            layout="@layout/include_loading"
+            app:isVisible="@{viewModel.isLoading()}"
+            tools:visibility="gone" />
+
+    </FrameLayout>
+</layout>

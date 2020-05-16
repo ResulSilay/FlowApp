@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="app.flow.ui.viewmodel.PostViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/galada"
+                        android:paddingStart="10dp"
+                        android:text="@string/flow_page_title"
+                        android:textColor="?colorPrimary"
+                        android:textSize="35sp"
+                        tools:ignore="RtlSymmetry" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/post_page_title"
+                        android:textAlignment="textStart"
+                        android:textColor="#C3C3C3"
+                        android:textSize="24sp"
+                        android:textStyle="italic" />
+
+                </LinearLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="7dp"
+                        app:cardElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingStart="15dp"
+                                android:paddingTop="10dp"
+                                android:paddingEnd="15sp"
+                                android:paddingBottom="10dp">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:id="@+id/img_post_user"
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_margin="5dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_profile_default"
+                                    app:civ_border_width="2dp"
+                                    app:civ_border_color="@color/colorPrimary"
+                                    app:image="@{viewModel.postModel.img}" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="7dp"
+                                    android:gravity="left|center"
+                                    android:orientation="vertical"
+                                    tools:ignore="RtlHardcoded">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="1dp"
+                                        android:singleLine="true"
+                                        android:text="@{viewModel.postModel.name}"
+                                        android:textColor="@color/colorAccent"
+                                        android:textSize="14sp"
+                                        app:fontFamily="sans-serif"
+                                        tools:text="Mert Kara" />
+
+                                    <TextView
+                                        android:id="@+id/txt_view_post_date"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:singleLine="true"
+                                        android:text="@{viewModel.postModel.createdDateTime}"
+                                        android:textColor="#B1B1B1"
+                                        android:textSize="12sp"
+                                        app:fontFamily="sans-serif"
+                                        tools:text="12 Haziran Perşembe" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layout_post_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txt_view_post_context"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="10dp"
+                                    android:paddingStart="21sp"
+                                    android:paddingTop="10sp"
+                                    android:paddingEnd="20sp"
+                                    android:paddingBottom="15sp"
+                                    android:text="@{viewModel.postModel.content}"
+                                    android:textColor="@android:color/black"
+                                    tools:text="......" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layout_post_pic"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:scaleType="centerCrop"
+                                    app:image="@{viewModel.postModel.picture}" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1sp"
+                                android:background="#7BE1E1E1" />
+
+                            <LinearLayout
+                                android:id="@+id/layout_post_rate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right|center"
+                                android:orientation="horizontal"
+                                android:padding="15sp"
+                                tools:ignore="RtlHardcoded">
+
+                                <RatingBar
+                                    style="?android:attr/ratingBarStyleSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:indeterminateTint="#FFEB3B"
+                                    android:progress="5"
+                                    android:progressBackgroundTint="#E1E1E1"
+                                    android:progressTint="#FFEB3B"
+                                    android:rating="@{viewModel.postModel.rate}"
+                                    android:secondaryProgressTint="#FFEB3B"
+                                    android:stepSize="0.1"
+                                    tools:rating="3.1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:text="@{String.valueOf(viewModel.postModel.rate)}"
+                                    android:textColor="#A5A5A5"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="5dp"
+                                    android:text="@string/post_page_rating"
+                                    android:textColor="#A5A5A5"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15sp"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="7dp"
+                        app:cardElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="25dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="@string/post_page_rate_us"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/black"
+                                android:textSize="17sp" />
+
+                            <RatingBar
+                                style="?android:attr/ratingBarStyleIndicator"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:indeterminateTint="#FFEB3B"
+                                android:isIndicator="false"
+                                android:numStars="5"
+                                android:progressBackgroundTint="#E1E1E1"
+                                android:progressTint="#FFEB3B"
+                                android:rating="@={viewModel.rateModel.rate}"
+                                android:secondaryProgressTint="#FFEB3B"
+                                android:stepSize="1.0"
+                                tools:rating="0.0" />
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15sp"
+                                android:backgroundTint="@color/colorPrimary"
+                                android:onClick="@{()->viewModel.onRateClick()}"
+                                android:src="@drawable/ic_check"
+                                android:tint="@android:color/white"
+                                app:fabSize="mini" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/include_loading"
+            layout="@layout/include_loading"
+            app:isVisible="@{viewModel.isLoading()}"
+            tools:visibility="gone" />
+    </RelativeLayout>
+</layout>

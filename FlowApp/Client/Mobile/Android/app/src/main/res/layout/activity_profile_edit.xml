@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="app.flow.ui.viewmodel.ProfileEditViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="0dp"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="25dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/img_profile_edit"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_margin="10dp"
+                            android:onClick="@{()->viewModel.onImageClick()}"
+                            android:scaleType="centerCrop"
+                            app:civ_border_color="@color/colorPrimary"
+                            app:civ_border_overlay="true"
+                            app:civ_border_width="2dp"
+                            app:image="@{viewModel.profileModel.img}" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{()->viewModel.onImageClick()}"
+                            android:text="@string/profile_edit_page_pic_change"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/darker_gray" />
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:layout_marginBottom="35dp"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="20sp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/profile_page_name"
+                                android:textAlignment="center"
+                                android:textColor="#858585" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="25dp"
+                                android:background="@drawable/shape_text_field_underline"
+                                android:inputType="textPersonName"
+                                android:text="@={viewModel.profileModel.name}"
+                                android:textAlignment="center"
+                                android:textColor="?colorAccent"
+                                android:textColorHint="#B5B5B5"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/profile_page_phone"
+                                android:textAlignment="center"
+                                android:textColor="#858585" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="25dp"
+                                android:background="@drawable/shape_text_field_underline"
+                                android:inputType="phone"
+                                android:text="@={viewModel.profileModel.phone}"
+                                android:textAlignment="center"
+                                android:textColor="?colorAccent"
+                                android:textColorHint="#B5B5B5"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/profile_page_address"
+                                android:textAlignment="center"
+                                android:textColor="#858585" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="25dp"
+                                android:background="@drawable/shape_text_field_underline"
+                                android:inputType="textPostalAddress"
+                                android:text="@={viewModel.profileModel.address}"
+                                android:textAlignment="center"
+                                android:textColor="?colorAccent"
+                                android:textColorHint="#B5B5B5"
+                                android:textSize="15sp" />
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:backgroundTint="?colorPrimary"
+                                android:onClick="@{()->viewModel.onInfoSaveClick()}"
+                                android:src="@drawable/ic_check"
+                                android:text="@string/profile_edit_page_save_info"
+                                android:tint="@android:color/white"
+                                app:fabSize="mini" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:layout_marginBottom="55dp"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="20sp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/profile_edit_page_password"
+                                android:textAlignment="center"
+                                android:textColor="#858585" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="25dp"
+                                android:background="@drawable/shape_text_field_underline"
+                                android:inputType="textPassword"
+                                android:text="@={viewModel.profileModel.password}"
+                                android:textAlignment="center"
+                                android:textColor="?colorAccent"
+                                android:textColorHint="#B5B5B5"
+                                android:textSize="15sp" />
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:backgroundTint="?colorPrimary"
+                                android:onClick="@{()->viewModel.onPasswordSaveClick()}"
+                                android:src="@drawable/ic_check"
+                                android:text="@string/profile_edit_page_save_password"
+                                android:tint="@android:color/white"
+                                app:fabSize="mini" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/include_loading"
+            layout="@layout/include_loading"
+            app:isVisible="@{viewModel.isLoading()}"
+            tools:visibility="gone" />
+
+    </RelativeLayout>
+</layout>

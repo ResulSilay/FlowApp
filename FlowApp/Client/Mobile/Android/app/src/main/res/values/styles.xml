@@ -1,0 +1,41 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor">@color/colorBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+    <style name="AppThemeSplash" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/colorSplashBackground</item>
+        <item name="colorPrimary">@color/colorSplashPrimary</item>
+        <item name="colorPrimaryDark">@color/colorSplashPrimaryDark</item>
+        <item name="colorAccent">@color/colorSplashAccent</item>
+        <item name="android:navigationBarColor">@color/colorSplashBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+    <style name="AppThemeAuth" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/colorAuthBackground</item>
+        <item name="colorPrimary">@color/colorAuthPrimary</item>
+        <item name="colorPrimaryDark">@color/colorAuthPrimaryDark</item>
+        <item name="colorAccent">@color/colorAuthAccent</item>
+        <item name="colorSplashLogo">@color/colorAuthSplashColor</item>
+        <item name="android:navigationBarColor">@color/colorAuthBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+    <style name="AppThemeFlow" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/colorFlowBackground</item>
+        <item name="colorPrimary">@color/colorFlowPrimary</item>
+        <item name="colorPrimaryDark">@color/colorFlowPrimaryDark</item>
+        <item name="colorAccent">@color/colorFlowAccent</item>
+        <item name="android:navigationBarColor">@color/colorFlowBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+</resources>

@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">flowApp</string>
+    <string name="app_title">.flowApp</string>
+
+    <string name="auth_login_title">login now</string>
+    <string name="auth_login_email">Email Address</string>
+    <string name="auth_login_password">Password</string>
+    <string name="auth_login_now">Sign In Now</string>
+    <string name="auth_login_register">would you like to join flow? sign up now.</string>
+
+    <string name="auth_login_valid_email_message">Please enter a valid e-mail.</string>
+    <string name="auth_login_valid_password_message">Enter the password.</string>
+    <string name="auth_login_invalid_message">E-mail address or password is incorrect.</string>
+
+    <string name="auth_register_title">register</string>
+    <string name="auth_register_name">Name</string>
+    <string name="auth_register_email">Email Address</string>
+    <string name="auth_register_password">Password</string>
+    <string name="auth_register_phone">Phone</string>
+    <string name="auth_register_address">Address</string>
+    <string name="auth_register_now">Sign Up Now</string>
+    <string name="auth_register_valid_info_message">Please enter all the information.</string>
+    <string name="auth_register_valid_email_message">Please enter a valid e-mail.</string>
+    <string name="auth_register_valid_password_message">Your password information must be at least 6 digits.</string>
+    <string name="auth_register_success_message">The user has been created. Please login.</string>
+    <string name="auth_register_error_message">Registration failed. Please check your internet.</string>
+
+    <string name="flow_page_title">.flow</string>
+
+    <string name="post_page_title">detail</string>
+    <string name="post_page_rating">rating</string>
+    <string name="post_page_rate_us">rate us</string>
+    <string name="post_page_rating_success_message">Your review has been submitted.</string>
+    <string name="post_page_rating_failure_message">Your rating could not be submitted.</string>
+
+    <string name="profile_page_name">Name</string>
+    <string name="profile_page_email">E-Mail</string>
+    <string name="profile_page_phone">Phone</string>
+    <string name="profile_page_address">Address</string>
+    <string name="profile_page_logout">LOGOUT</string>
+
+    <string name="profile_edit_page_save_info">SAVE INFO</string>
+    <string name="profile_edit_page_save_password">CHANGE PASSWORD</string>
+    <string name="profile_edit_page_password">New Password</string>
+    <string name="profile_edit_page_saved">Saved.</string>
+    <string name="profile_edit_page_pic_change">Change Picture</string>
+
+    <string name="publish_page_title">publish</string>
+    <string name="publish_page_content">share text…</string>
+    <string name="publish_page_success">Shared…</string>
+    <string name="publish_page_failure">Could not be shared…</string>
+    <string name="publish_page_valid_context_message">Please enter at least 5 characters.</string>
+
+
+    <string name="loading_view_network">Something went wrong.\nCheck your internet connection.</string>
+
+
+    <string name="TODO">TODO</string>
+
+</resources>

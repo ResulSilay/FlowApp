@@ -1,0 +1,11 @@
+C:\Users\Dell-07\Desktop\TurkAI Task\FlowApp\Server\FlowApp\FlowApp.Entity\bin\Debug\netstandard2.0\FlowApp.Entity.deps.json
+C:\Users\Dell-07\Desktop\TurkAI Task\FlowApp\Server\FlowApp\FlowApp.Entity\bin\Debug\netstandard2.0\FlowApp.Entity.dll
+C:\Users\Dell-07\Desktop\TurkAI Task\FlowApp\Server\FlowApp\FlowApp.Entity\obj\Debug\netstandard2.0\FlowApp.Entity.csprojAssemblyReference.cache
+C:\Users\Dell-07\Desktop\TurkAI Task\FlowApp\Server\FlowApp\FlowApp.Entity\obj\Debug\netstandard2.0\FlowApp.Entity.AssemblyInfoInputs.cache
+C:\Users\Dell-07\Desktop\TurkAI Task\FlowApp\Server\FlowApp\FlowApp.Entity\obj\Debug\netstandard2.0\FlowApp.Entity.AssemblyInfo.cs
+C:\Users\Dell-07\Desktop\TurkAI Task\FlowApp\Server\FlowApp\FlowApp.Entity\bin\Debug\netstandard2.0\FlowApp.Entity.pdb
+C:\Users\Dell-07\Desktop\TurkAI Task\FlowApp\Server\FlowApp\FlowApp.Entity\bin\Debug\netstandard2.0\FlowApp.Core.dll
+C:\Users\Dell-07\Desktop\TurkAI Task\FlowApp\Server\FlowApp\FlowApp.Entity\bin\Debug\netstandard2.0\FlowApp.Core.pdb
+C:\Users\Dell-07\Desktop\TurkAI Task\FlowApp\Server\FlowApp\FlowApp.Entity\obj\Debug\netstandard2.0\FlowApp.Entity.csproj.CopyComplete
+C:\Users\Dell-07\Desktop\TurkAI Task\FlowApp\Server\FlowApp\FlowApp.Entity\obj\Debug\netstandard2.0\FlowApp.Entity.dll
+C:\Users\Dell-07\Desktop\TurkAI Task\FlowApp\Server\FlowApp\FlowApp.Entity\obj\Debug\netstandard2.0\FlowApp.Entity.pdb

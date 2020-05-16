@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:windowBackground">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15sp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/include_loading_progress"
+            style="?android:progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="15sp"
+            android:indeterminate="true"
+            android:indeterminateTint="?colorPrimary"
+            android:progressTint="?colorPrimary" />
+
+        <LinearLayout
+            android:id="@+id/include_loading_network"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15sp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/TODO"
+                android:padding="10dp"
+                android:src="@drawable/ic_empty_network" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15sp"
+                android:text="@string/loading_view_network"
+                android:textAlignment="center"
+                android:textColor="?colorPrimary"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

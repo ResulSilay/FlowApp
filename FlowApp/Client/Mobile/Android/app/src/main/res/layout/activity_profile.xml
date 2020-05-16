@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="app.flow.ui.viewmodel.ProfileViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="0dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="25dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_margin="10dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_profile_default"
+                            app:civ_border_color="@color/colorPrimary"
+                            app:civ_border_overlay="true"
+                            app:civ_border_width="2dp"
+                            app:image="@{viewModel.profileModel.img}" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:singleLine="true"
+                                android:text="@{viewModel.profileModel.name}"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="15sp"
+                                app:fontFamily="sans-serif"
+                                tools:text="__________" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:layout_marginBottom="15dp"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingStart="15sp"
+                                android:paddingTop="10dp"
+                                android:paddingEnd="15sp"
+                                android:paddingBottom="13dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5sp"
+                                    android:text="@string/profile_page_email"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="13sp"
+                                    tools:ignore="RtlCompat,RtlHardcoded" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5dp"
+                                    android:text="@{viewModel.profileModel.email}"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="RtlCompat,RtlHardcoded"
+                                    tools:text="..." />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#EDEDED"
+                                android:orientation="vertical" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingStart="15sp"
+                                android:paddingTop="10dp"
+                                android:paddingEnd="15sp"
+                                android:paddingBottom="13dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="15sp"
+                                    android:padding="5sp"
+                                    android:text="@string/profile_page_phone"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="14sp"
+                                    tools:ignore="RtlCompat,RtlHardcoded" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5dp"
+                                    android:text="@{viewModel.profileModel.phone}"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="RtlCompat,RtlHardcoded"
+                                    tools:text="..." />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#EDEDED"
+                                android:orientation="vertical" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingStart="15sp"
+                                android:paddingTop="10dp"
+                                android:paddingEnd="15sp"
+                                android:paddingBottom="13dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="15sp"
+                                    android:padding="5sp"
+                                    android:text="@string/profile_page_address"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="14sp"
+                                    tools:ignore="RtlCompat,RtlHardcoded" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5dp"
+                                    android:text="@{viewModel.profileModel.address}"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="RtlCompat,RtlHardcoded"
+                                    tools:text="..." />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/white"
+                        android:onClick="@{()->viewModel.onLogoutClick()}"
+                        android:padding="20sp"
+                        android:text="@string/profile_page_logout"
+                        android:textColor="@android:color/holo_red_light" />
+                </LinearLayout>
+            </ScrollView>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="35sp"
+                android:onClick="@{()->viewModel.onEditClick()}"
+                android:src="@drawable/ic_profile_edit"
+                app:backgroundTint="@android:color/white"
+                app:rippleColor="#C1C1C1" />
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/include_loading"
+            layout="@layout/include_loading"
+            app:isVisible="@{viewModel.isLoading()}"
+            tools:visibility="gone" />
+
+    </RelativeLayout>
+</layout>
