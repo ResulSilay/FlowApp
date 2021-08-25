@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.18" />
     <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="11.1.5" />
     <PackageReference Include="Microsoft.Azure.Storage.Common" Version="11.1.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc2" />
